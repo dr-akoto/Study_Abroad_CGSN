@@ -24,15 +24,21 @@ const services = [
     description: "Helping students find and apply for scholarships to fund their education abroad.",
   },
   {
+    icon: <FaChalkboardTeacher size={50} className="text-red-500" />, // Chalkboard Teacher icon
+    title: "Pre Departure briefing",
+    description: "Preparing students for life abroad with cultural training and support programs.",
+  },
+  {
     icon: <FaPlane size={50} className="text-orange-500" />, // Plane icon
     title: "Travel & Accommodation",
     description: "Assisting students with travel bookings and finding suitable accommodation options.",
   },
+ 
   {
     icon: <FaChalkboardTeacher size={50} className="text-red-500" />, // Chalkboard Teacher icon
     title: "Cultural Adaptation Training",
     description: "Preparing students for life abroad with cultural training and support programs.",
-  },
+  }
 ];
 
 // Schools data
