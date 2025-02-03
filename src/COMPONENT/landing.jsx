@@ -43,7 +43,7 @@ const services = [
 ];
 
 const schools = [
-  { id: 1, name: "Harvard University", logo: "/api/placeholder/150/150" },
+  { id: 1, name: "Harvard University", logo: "https://www.google.com/imgres?q=arvard%20university%20logo%20png&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F70%2FHarvard_University_logo.svg%2F2560px-Harvard_University_logo.svg.png&imgrefurl=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3AHarvard_University_logo.svg&docid=i0CQuq_GhUowdM&tbnid=LX6X6JW1b0BBYM&vet=12ahUKEwjCmqbA3J6LAxVrVKQEHTbOIl8QM3oECGkQAA..i&w=2560&h=704&hcb=2&ved=2ahUKEwjCmqbA3J6LAxVrVKQEHTbOIl8QM3oECGkQAA" },
   { id: 2, name: "Stanford University", logo: "/api/placeholder/150/150" },
   { id: 3, name: "Oxford University", logo: "/api/placeholder/150/150" },
   { id: 4, name: "MIT", logo: "/api/placeholder/150/150" },
@@ -74,12 +74,30 @@ const testimonials = [
 
 export default function Landing() {
   return (
+    <> 
     <div className="min-h-screen bg-blue-50 ">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="container h-screen mx-auto px-4 py-20">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+      <section className="bg-blue-100 h-screen flex  ">
+      <div className="flex flex-col justify-center items-center gap-10 text-center animate-fade-in-up delay-200 w-2/3  ">  
+        <h1 className="text-4xl md:text-6xl font-bold text-bg-gray-400 animate-fade-in-up">
+          Study Abroad with CGSN
+        </h1>
+        <p className="text-xl md:text-2xl mt-6 text-bg-gray-400 animate-fade-in-up delay-200">
+              Get help from certified academic advisors to join the university of your dreams
+            </p>
+        <button className="mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg transform transition-all duration-300 hover:scale-105 hover:bg-blue-500 animate-fade-in-up delay-300">
+              About Us
+            </button>
+      </div>
+      <div className="  h-full item-center justify-center object-cover w-[40vw]">
+      <img className="h-full "  src="https://img.freepik.com/premium-vector/flat-design-study-abroad-illustration_23-2150287943.jpg?semt=ais_hybrid"
+                alt="Students studying abroad"></img>
+      </div>
+      </section>
+      {/* <section className="  h-screen mx-auto px-6 md-10 pr-0 py-20 ">
+        <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-bg-gray-400 animate-fade-in-up">
               Study Abroad with CGSN
@@ -91,17 +109,18 @@ export default function Landing() {
               About Us
             </button>
           </div>
-          <div className="w-full md:w-1/2">
-            <div className="relative rounded-2xl overflow-hidden transform transition-all duration-500 hover:scale-105">
-              <img
+          <div className="w-full md:w-1/2 mt-10 md:mt-0 h-[70vh]">
+            <div className="relative  rounded-2xl overflow-hidden transform transition-all duration-500 hover:scale-105">
+              <img  
                 src="https://img.freepik.com/premium-vector/flat-design-study-abroad-illustration_23-2150287943.jpg?semt=ais_hybrid"
                 alt="Students studying abroad"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto md-[70vh] object-cover "
               />
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      </div>
 
       {/* Partner Universities Section */}
       <section className="py-20 bg-gray-900">
@@ -168,7 +187,8 @@ export default function Landing() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-900 via-pink-900 to-red-900">
+      <section className="py-20 
+      ">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-white mb-12 animate-fade-in-up">
             Student Testimonials
@@ -192,7 +212,7 @@ export default function Landing() {
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-white rounded-xl p-8 transform transition-all duration-300 hover:scale-105">
+                <div className="bg-blue-50 rounded-xl p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20">
                   <div className="flex justify-center mb-6">
                     <img
                       src={testimonial.image}
@@ -216,8 +236,11 @@ export default function Landing() {
           </Swiper>
         </div>
       </section>
+      <footer className="bg-gray-900 text-white py-8 text-center">
+        <p>&copy; 2022 CGSN. All rights reserved.</p>
+        </footer>
 
-      <style jsx global>{`
+      <style  >{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -255,6 +278,6 @@ export default function Landing() {
           color: white;
         }
       `}</style>
-    </div>
-  );
-}
+      </>
+   );
+};
