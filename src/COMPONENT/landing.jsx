@@ -1,283 +1,83 @@
- import Navbar from "./navbar";
-import { FaUniversity, FaPassport, FaMoneyCheckAlt, FaPlane, FaChalkboardTeacher } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { Star } from "lucide-react";
-
-// Import required styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-const services = [
-  {
-    icon: <FaUniversity size={50} className="text-blue-500" />,
-    title: "University Application Assistance",
-    description: "Expert guidance for applying to top universities, ensuring all requirements are met.",
-  },
-  {
-    icon: <FaPassport size={50} className="text-green-500" />,
-    title: "Visa Processing Support",
-    description: "Comprehensive support for student visa applications and legal documentation.",
-  },
-  {
-    icon: <FaMoneyCheckAlt size={50} className="text-purple-500" />,
-    title: "Scholarship & Financial Aid",
-    description: "Helping students find and apply for scholarships to fund their education abroad.",
-  },
-  {
-    icon: <FaChalkboardTeacher size={50} className="text-red-500" />,
-    title: "Pre Departure Briefing",
-    description: "Preparing students for life abroad with essential information and guidance.",
-  },
-  {
-    icon: <FaPlane size={50} className="text-orange-500" />,
-    title: "Travel & Accommodation",
-    description: "Assisting students with travel bookings and finding suitable accommodation options.",
-  },
-  {
-    icon: <FaChalkboardTeacher size={50} className="text-red-500" />,
-    title: "Cultural Adaptation Training",
-    description: "Preparing students for life abroad with cultural training and support programs.",
-  }
-];
-
-const schools = [
-  { id: 1, name: "Harvard University", logo: "https://www.google.com/imgres?q=arvard%20university%20logo%20png&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F70%2FHarvard_University_logo.svg%2F2560px-Harvard_University_logo.svg.png&imgrefurl=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3AHarvard_University_logo.svg&docid=i0CQuq_GhUowdM&tbnid=LX6X6JW1b0BBYM&vet=12ahUKEwjCmqbA3J6LAxVrVKQEHTbOIl8QM3oECGkQAA..i&w=2560&h=704&hcb=2&ved=2ahUKEwjCmqbA3J6LAxVrVKQEHTbOIl8QM3oECGkQAA" },
-  { id: 2, name: "Stanford University", logo: "/api/placeholder/150/150" },
-  { id: 3, name: "Oxford University", logo: "/api/placeholder/150/150" },
-  { id: 4, name: "MIT", logo: "/api/placeholder/150/150" },
-  { id: 5, name: "Cambridge University", logo: "/api/placeholder/150/150" },
-  { id: 6, name: "Yale University", logo: "/api/placeholder/150/150" },
-];
-
-const testimonials = [
-  {
-    name: "Alex Johnson",
-    title: "International Student",
-    feedback: "CGSN made my dream of studying abroad a reality. Their guidance was invaluable throughout the process.",
-    image: "/api/placeholder/80/80",
-  },
-  {
-    name: "Sophia Lee",
-    title: "Graduate Student",
-    feedback: "The cultural adaptation training really helped me adjust to life in a new country. Highly recommended!",
-    image: "/api/placeholder/80/80",
-  },
-  {
-    name: "David Kim",
-    title: "Undergraduate Student",
-    feedback: "Their scholarship assistance helped me secure funding for my studies. I'm grateful for their support.",
-    image: "/api/placeholder/80/80",
-  },
-];
-
-export default function Landing() {
+ 
+const LandingPage = () => {
   return (
-    <> 
-    <div className="min-h-screen bg-blue-50 ">
-      <Navbar />
+    <div className="bg-gray-50 text-gray-900">
+      {/* Navbar */}
+      <nav className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-5 px-8 flex justify-between items-center shadow-lg">
+        <h1 className="text-3xl font-extrabold">Research Hub</h1>
+        <ul className="flex space-x-8 text-lg">
+          <li><a href="#features" className="hover:underline">Features</a></li>
+          <li><a href="#how-it-works" className="hover:underline">How It Works</a></li>
+          <li><a href="#signup" className="hover:underline">Sign Up</a></li>
+        </ul>
+      </nav>
       
       {/* Hero Section */}
-      <section className="bg-blue-100 h-screen flex  ">
-      <div className="flex flex-col justify-center items-center gap-10 text-center animate-fade-in-up delay-200 w-2/3  ">  
-        <h1 className="text-4xl md:text-6xl font-bold text-bg-gray-400 animate-fade-in-up">
-          Study Abroad with CGSN
-        </h1>
-        <p className="text-xl md:text-2xl mt-6 text-bg-gray-400 animate-fade-in-up delay-200">
-              Get help from certified academic advisors to join the university of your dreams
-            </p>
-        <button className="mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg transform transition-all duration-300 hover:scale-105 hover:bg-blue-500 animate-fade-in-up delay-300">
-              About Us
-            </button>
-      </div>
-      <div className="  h-full item-center justify-center object-cover w-[40vw]">
-      <img className="h-full "  src="https://img.freepik.com/premium-vector/flat-design-study-abroad-illustration_23-2150287943.jpg?semt=ais_hybrid"
-                alt="Students studying abroad"></img>
-      </div>
+      <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-24 text-center">
+        <h1 className="text-6xl font-extrabold">Manage Your Research & Thesis Seamlessly</h1>
+        <p className="mt-5 text-xl max-w-3xl mx-auto">Track research progress, collaborate with peers, and integrate your GPA effortlessly.</p>
+        <a href="#signup" className="mt-8 inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition shadow-lg">Get Started</a>
+      </header>
+      
+      {/* Features Section */}
+      <section id="features" className="py-20 text-center bg-white">
+        <h2 className="text-5xl font-bold">Key Features</h2>
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-10">
+          {[
+            { title: "Research Submission", description: "Easily submit and track your research papers online." },
+            { title: "GPA Integration", description: "Your GPA is displayed on your profile for credibility." },
+            { title: "Collaboration Tools", description: "Work with peers and get real-time feedback from mentors." },
+            { title: "Plagiarism Detection", description: "Built-in plagiarism checks to ensure originality." },
+            { title: "Digital Library", description: "Access a repository of past research papers." },
+            { title: "Citation Management", description: "Automatic citation formatting for your references." },
+          ].map((feature, index) => (
+            <div key={index} className="p-8 bg-gray-50 shadow-lg rounded-xl hover:shadow-2xl transition transform hover:-translate-y-2">
+              <h3 className="font-semibold text-2xl">{feature.title}</h3>
+              <p className="mt-3 text-lg text-gray-700">{feature.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
-      {/* <section className="  h-screen mx-auto px-6 md-10 pr-0 py-20 ">
-        <div className="flex flex-col md:flex-row items-center gap-10">
-          <div className="w-full md:w-1/2 text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-bg-gray-400 animate-fade-in-up">
-              Study Abroad with CGSN
-            </h1>
-            <p className="text-xl md:text-2xl mt-6 text-bg-gray-400 animate-fade-in-up delay-200">
-              Get help from certified academic advisors to join the university of your dreams
-            </p>
-            <button className="mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg transform transition-all duration-300 hover:scale-105 hover:bg-blue-500 animate-fade-in-up delay-300">
-              About Us
-            </button>
-          </div>
-          <div className="w-full md:w-1/2 mt-10 md:mt-0 h-[70vh]">
-            <div className="relative  rounded-2xl overflow-hidden transform transition-all duration-500 hover:scale-105">
-              <img  
-                src="https://img.freepik.com/premium-vector/flat-design-study-abroad-illustration_23-2150287943.jpg?semt=ais_hybrid"
-                alt="Students studying abroad"
-                className="w-full h-auto md-[70vh] object-cover "
-              />
+      
+      {/* FAQ and Newsletter Section */}
+      <section className="bg-gray-100 py-20 px-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* FAQ Section */}
+          <div>
+            <h2 className="text-5xl font-bold">Frequently Asked Questions</h2>
+            <div className="mt-10">
+              {[
+                { question: "Is this platform free to use?", answer: "Yes! Research Hub offers a free plan with essential features, and premium options for advanced users." },
+                { question: "How do I track my research progress?", answer: "Your dashboard provides real-time tracking of submissions, feedback, and deadlines." },
+                { question: "Can I collaborate with others?", answer: "Absolutely! Invite peers and mentors to review your work and provide insights." },
+                { question: "Does it support plagiarism detection?", answer: "Yes, our built-in tool helps ensure your research is original." }
+              ].map((faq, index) => (
+                <div key={index} className="mb-8 p-6 bg-white shadow-lg rounded-xl hover:shadow-2xl transition">
+                  <h3 className="font-semibold text-2xl text-blue-700">{faq.question}</h3>
+                  <p className="mt-3 text-lg text-gray-700">{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section> */}
-      </div>
-
-      {/* Partner Universities Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-white mb-12 animate-fade-in-up">
-            Partner Universities
-          </h2>
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            pagination={{ clickable: true }}
-            navigation={true}
-            modules={[Autoplay, Pagination, Navigation]}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="university-swiper"
-          >
-            {schools.map((school) => (
-              <SwiperSlide key={school.id}>
-                <div className="bg-gray-800 rounded-xl p-6 transform transition-all duration-300 hover:scale-105">
-                  <img
-                    src={school.logo}
-                    alt={school.name}
-                    className="w-32 h-32 mx-auto object-contain mb-4"
-                  />
-                  <h3 className="text-xl font-semibold text-white text-center">{school.name}</h3>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-white mb-12 animate-fade-in-up">
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-gray-700 rounded-xl p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20"
-              >
-                <div className="flex justify-center mb-6 transform transition-all duration-300 hover:scale-110">
-                  {service.icon}
-                </div>
-                <h3 className="text-2xl font-semibold text-white mb-4 text-center">
-                  {service.title}
-                </h3>
-                <p className="text-gray-300 text-center">{service.description}</p>
-              </div>
-            ))}
+          
+          {/* Newsletter Signup */}
+          <div className="bg-white p-10 shadow-xl rounded-xl text-center">
+            <h2 className="text-4xl font-bold">Stay Updated</h2>
+            <p className="mt-6 text-lg text-gray-700">Subscribe to our newsletter to get the latest updates on research management and academic tools.</p>
+            <form className="mt-8">
+              <input type="email" placeholder="Enter your email" className="w-full px-5 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" />
+              <button className="mt-6 w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition shadow-lg">Subscribe</button>
+            </form>
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 
-      ">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-white mb-12 animate-fade-in-up">
-            Student Testimonials
-          </h2>
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            pagination={{ clickable: true }}
-            navigation={true}
-            modules={[Autoplay, Pagination, Navigation]}
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="testimonial-swiper"
-          >
-            {testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index}>
-                <div className="bg-blue-50 rounded-xl p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20">
-                  <div className="flex justify-center mb-6">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-20 h-20 rounded-full border-4 border-purple-500"
-                    />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-800 text-center mb-2">
-                    {testimonial.name}
-                  </h3>
-                  <p className="text-gray-600 text-center mb-4">{testimonial.title}</p>
-                  <p className="text-gray-700 text-center italic mb-6">{testimonial.feedback}</p>
-                  <div className="flex justify-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="text-yellow-500" size={20} fill="currentColor" />
-                    ))}
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
-      <footer className="bg-gray-900 text-white py-8 text-center">
-        <p>&copy; 2022 CGSN. All rights reserved.</p>
-        </footer>
-
-      <style  >{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fade-in-up {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .delay-200 {
-          animation-delay: 200ms;
-        }
-
-        .delay-300 {
-          animation-delay: 300ms;
-        }
-
-        .university-swiper,
-        .testimonial-swiper {
-          padding: 20px 0;
-        }
-
-        .swiper-pagination-bullet {
-          background: white;
-        }
-
-        .swiper-button-next,
-        .swiper-button-prev {
-          color: white;
-        }
-      `}</style>
-      </>
-   );
+      
+      {/* Footer */}
+      <footer className="bg-gradient-to-r from-blue-600 to-blue-800 text-white text-center py-8 mt-20">
+        <p className="text-lg">&copy; {new Date().getFullYear()} Research Hub. All rights reserved.</p>
+      </footer>
+    </div>
+  );
 };
+
+export default LandingPage;
